@@ -37,7 +37,7 @@ frontend http_in
     redirect scheme https code 301 if !{ ssl_fc }
 
 frontend https_in
-    bind *:443 ssl crt /etc/haproxy/certs/shakilla.tech.pem crt /etc/haproxy/certs/wwwshakilla.tech.pem
+    bind *:443 ssl crt  /etc/haproxy/certs/wwwshakilla.tech.pem
     mode http
     http-request set-header X-Forwarded-Proto https
     default_backend web_backend
